@@ -1,0 +1,238 @@
+// About Hero Section
+.about-hero {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  
+  .about-content {
+    .about-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      color: #000;
+      
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
+    }
+    
+    .about-subtitle {
+      font-size: 1.3rem;
+      color: #FF8C00;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+    
+    .about-description {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+  }
+  
+  .about-image {
+    img {
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+}
+
+// Mission Section
+.mission-section {
+  padding: 80px 0;
+  background: #fff;
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #000;
+    
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+  
+  .title-underline {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #FF8C00, #FFA500);
+    margin: 0 auto 2rem;
+    border-radius: 2px;
+  }
+  
+  .mission-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    margin: 0;
+  }
+}
+
+// Features Section
+.features-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+  
+  .feature-card {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(255, 140, 0, 0.15);
+      border-color: #FF8C00;
+    }
+    
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #FF8C00, #FFA500);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      
+      i {
+        font-size: 2rem;
+        color: #fff;
+      }
+    }
+    
+    .feature-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #000;
+    }
+    
+    .feature-description {
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+}
+
+// Story Section
+.story-section {
+  padding: 80px 0;
+  background: #fff;
+  
+  .story-content {
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #000;
+      
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+    
+    .story-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 1.5rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .story-image {
+    img {
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 60px 0;
+    
+    .about-title {
+      font-size: 2.5rem;
+    }
+    
+    .about-subtitle {
+      font-size: 1.1rem;
+    }
+  }
+  
+  .mission-section,
+  .features-section,
+  .story-section {
+    padding: 60px 0;
+  }
+  
+  .feature-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+// Animation Classes
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-content,
+.mission-text,
+.feature-card,
+.story-content {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+// Hover Effects
+.feature-card:hover .feature-icon {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF8C00;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFA500;
+}

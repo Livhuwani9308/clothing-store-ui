@@ -1,0 +1,316 @@
+.breadcrumb-banner {
+  background-color: #1a1a1a; /* Darker fallback */
+  background-image: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  ),
+  url('https://livhuwani.sirv.com/MKclothing/banner/banner-2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect */
+  height: 300px; /* Increased height for better presence */
+  position: relative;
+  overflow: hidden;
+  
+  /* Add a subtle overlay pattern */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(255, 140, 0, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(255, 140, 0, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  /* Animated background gradient */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      transparent 0%,
+      rgba(255, 140, 0, 0.05) 25%,
+      transparent 50%,
+      rgba(255, 140, 0, 0.05) 75%,
+      transparent 100%
+    );
+    animation: shimmer 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
+
+/* Container styling */
+.breadcrumb-banner .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Banner content */
+.banner-content {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Title styling - toned down */
+.breadcrumb-banner h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  /* Removed gradient text effect for cleaner look */
+}
+
+/* Subtitle styling */
+.banner-subtitle {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Breadcrumb styling - improved */
+.breadcrumb-banner .breadcrumb {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border-radius: 0 !important;
+  padding: 0.6rem 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition: all 0.3s ease;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  list-style: none !important;
+  margin: 0 !important;
+  
+  &:hover {
+    background: transparent !important;
+    border-color: transparent !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.breadcrumb-item {
+  font-weight: 400;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  display: flex !important;
+  align-items: center !important;
+  position: relative;
+  margin: 0 !important;
+  padding: 0 !important;
+  
+  &:not(:last-child) {
+    margin-right: 2rem !important;
+    
+    &::after {
+      content: '>';
+      color: rgba(255, 140, 0, 0.7);
+      font-weight: 400;
+      position: absolute;
+      right: -1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.9rem;
+      line-height: 1;
+      z-index: 1;
+    }
+  }
+  
+  &.active {
+    color: #f0f0f0;
+    font-weight: 500;
+    padding: 0.2rem 0.4rem !important;
+  }
+}
+
+.breadcrumb a {
+  color: #ffa500 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 500;
+  padding: 0.2rem 0.4rem !important;
+  border-radius: 4px;
+  display: inline-block !important;
+  
+  &:hover {
+    color: #ff8c00 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 2px;
+    background-color: rgba(255, 140, 0, 0.15);
+  }
+}
+
+.breadcrumb .active {
+  color: #f0f0f0 !important;
+  font-weight: 500;
+  padding: 0.2rem 0.4rem !important;
+}
+
+/* Decorative elements */
+.banner-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.decoration-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.08) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.decoration-circle-1 {
+  width: 120px;
+  height: 120px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.decoration-circle-2 {
+  width: 80px;
+  height: 80px;
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.decoration-circle-3 {
+  width: 60px;
+  height: 60px;
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0%, 100% {
+    opacity: 0.2;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 0.4;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-15px) rotate(90deg);
+    opacity: 0.4;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .breadcrumb-banner {
+    height: 250px;
+    background-attachment: scroll; /* Disable parallax on mobile */
+  }
+  
+  .breadcrumb-banner h1 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+  }
+  
+  .banner-subtitle {
+    font-size: 1rem;
+  }
+  
+  .breadcrumb {
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+  }
+  
+  .breadcrumb-item {
+    font-size: 0.85rem;
+  }
+  
+  .decoration-circle {
+    display: none; /* Hide decorative elements on mobile */
+  }
+}
+
+@media (max-width: 576px) {
+  .breadcrumb-banner {
+    height: 200px;
+  }
+  
+  .breadcrumb-banner h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .banner-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .breadcrumb {
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+  }
+  
+  .breadcrumb-item {
+    font-size: 0.8rem;
+  }
+}
+
+/* Loading state */
+.breadcrumb-banner.loading {
+  background-image: linear-gradient(
+    90deg,
+    #1a1a1a 25%,
+    #2a2a2a 50%,
+    #1a1a1a 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

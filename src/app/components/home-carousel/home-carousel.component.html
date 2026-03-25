@@ -1,0 +1,22 @@
+<div id="carouselHero" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div
+      class="carousel-item"
+      *ngFor="let img of images; let i = index"
+      [class.active]="i === activeSlideIndex"
+    >
+      <img [src]="img" class="d-block w-100" alt="Slide Image" />
+    </div>
+  </div>
+
+  <!-- Carousel dots -->
+  <div class="carousel-dots">
+    <button
+      *ngFor="let img of images; let i = index"
+      class="carousel-dot"
+      [class.active]="i === activeSlideIndex"
+      (click)="setActiveSlide(i)"
+      [attr.aria-label]="'Go to slide ' + (i + 1)"
+    ></button>
+  </div>
+</div>

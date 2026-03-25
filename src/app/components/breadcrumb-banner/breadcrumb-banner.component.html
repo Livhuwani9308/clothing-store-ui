@@ -1,0 +1,32 @@
+<section class="breadcrumb-banner d-flex align-items-center justify-content-center text-white text-center" role="banner" aria-label="Page banner">
+  <div class="container">
+    <div class="banner-content">
+      <h1 class="display-5 fw-bold mb-3" [attr.aria-label]="'Page title: ' + title">{{ title }}</h1>
+      
+      <nav *ngIf="showBreadcrumb" aria-label="breadcrumb" class="d-flex justify-content-center">
+        <ol class="breadcrumb bg-transparent p-0 m-0" role="navigation" aria-label="Breadcrumb navigation">
+          <li class="breadcrumb-item" aria-label="Navigate to home page">
+            <a routerLink="/" class="text-white text-decoration-none" aria-label="Go to home page">
+              <i class="bi bi-house-door me-1"></i>Home
+            </a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page" [attr.aria-label]="'Current page: ' + title">
+            {{ title }}
+          </li>
+        </ol>
+      </nav>
+      
+      <!-- Optional subtitle -->
+      <p *ngIf="subtitle" class="banner-subtitle mt-3 mb-0">
+        {{ subtitle }}
+      </p>
+    </div>
+  </div>
+  
+  <!-- Decorative elements -->
+  <div class="banner-decoration">
+    <div class="decoration-circle decoration-circle-1"></div>
+    <div class="decoration-circle decoration-circle-2"></div>
+    <div class="decoration-circle decoration-circle-3"></div>
+  </div>
+</section>

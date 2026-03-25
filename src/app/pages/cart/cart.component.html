@@ -1,0 +1,60 @@
+<!-- <app-breadcrumb-banner [title]="'Shopping Cart'" [showBreadcrumb]="true"></app-breadcrumb-banner>
+
+<section class="py-5 text-white bg-black">
+  <div class="container">
+    <h2 class="mb-4">Your Cart</h2>
+    <div *ngIf="cartItems.length; else emptyCart">
+      <table class="table text-white">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th class="text-end">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartItems">
+            <td>{{ item.name }}</td>
+            <td>{{ item.price | currency }}</td>
+            <td class="text-end">
+              <button class="btn btn-sm btn-danger" (click)="removeItem(item)">Remove</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="text-end mt-3">
+        <strong>Total: {{ getTotal() | currency }}</strong>
+        <div>
+          <a routerLink="/checkout" class="btn btn-warning mt-2">Proceed to Checkout</a>
+        </div>
+      </div>
+    </div>
+    <ng-template #emptyCart>
+      <p>Your cart is currently empty.</p>
+    </ng-template>
+  </div>
+</section> -->
+<div class="container py-5">
+  <h2 class="text-warning mb-4">Your Cart</h2>
+  <div *ngIf="cartItems.length === 0" class="alert alert-info">Your cart is empty.</div>
+
+  <div *ngFor="let item of cartItems; let i = index" class="row align-items-center mb-4 border-bottom pb-2">
+    <div class="col-md-2">
+      <img [src]="item.imageUrl" class="img-fluid rounded" alt="{{ item.name }}">
+    </div>
+    <div class="col-md-6">
+      <h5>{{ item.name }}</h5>
+    </div>
+    <div class="col-md-2 text-end">
+      <strong>${{ item.price }}</strong>
+    </div>
+    <div class="col-md-2 text-end">
+      <button (click)="removeItem(i)" class="btn btn-sm btn-outline-danger">Remove</button>
+    </div>
+  </div>
+
+  <div class="text-end mt-4">
+    <h4>Total: ${{ getTotal() }}</h4>
+    <a routerLink="/checkout" class="btn btn-warning text-dark">Proceed to Checkout</a>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+.carousel-item img {
+  height: 75vh;
+  object-fit: cover;
+}
+
+.carousel-item {
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.carousel-item.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.carousel-item:not(.active) {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carousel-dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.carousel-dot.active {
+  background-color: #ed8607;
+  transform: scale(1.2);
+}

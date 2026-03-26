@@ -20,12 +20,9 @@ export class ContactComponent {
     
     this.isSubmitting = true;
     
-    // Simulate API call
     setTimeout(() => {
       console.log('Contact form submitted', this.contact);
-      alert('Thank you for contacting us! We\'ll get back to you soon.');
       
-      // Reset form
       this.contact = {
         name: '',
         email: '',

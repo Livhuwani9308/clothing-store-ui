@@ -1,9 +1,78 @@
-strong {
-    color: #FF8C00;
+/* ========================================
+   FOOTER – MK Clothing
+======================================== */
+
+$brand-yellow: #f5c518;
+$dark: #000;
+$text-muted: #aaa;
+$transition: 0.25s ease;
+
+.footer-main {
+  background: $dark;
+  color: #fff;
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(245, 197, 24, 0.2);
 }
 
-footer {
-    border-top: 1px solid #FF8C00;
-    box-shadow: 5px 0px 8px rgba(255, 140, 0, 0.3);
-    background-color: #000;
+/* Grid Layout */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+/* Titles */
+.footer-title {
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: $brand-yellow;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Text */
+.footer-text {
+  color: $text-muted;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Links */
+.footer-link {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: $text-muted;
+  text-decoration: none !important;
+  transition: color $transition;
+  font-size: 0.95rem;
+}
+
+.footer-link:hover {
+  color: $brand-yellow;
+}
+
+/* Divider */
+.footer-divider {
+  margin: 3rem 0 1.5rem;
+  height: 1px;
+  background: rgba(245, 197, 24, 0.15);
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  color: $text-muted;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-main {
+    padding: 3rem 0 1.5rem;
+  }
 }

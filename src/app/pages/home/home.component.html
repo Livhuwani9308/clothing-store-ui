@@ -1,66 +1,78 @@
-<!-- <app-breadcrumb-banner [title]="'Home'" [showBreadcrumb]="false"></app-breadcrumb-banner> -->
-
 <app-home-carousel></app-home-carousel>
 
-<!-- Enhanced Hero Section -->
-<section class="hero bg-gradient-to-right text-white text-center py-5">
-  <div class="container">
-    <div class="hero-content">
-      <h1 class="display-4 hero-title">Your Style, Your Rules.</h1>
-      <p class="lead hero-subtitle">Explore premium men's clothing and footwear that defines your unique personality.</p>
-      <div class="hero-buttons">
-        <a routerLink="/shop" class="btn btn-warning btn-lg me-3">Shop Now</a>
-        <a routerLink="/about" class="btn btn-outline-light btn-lg">Learn More</a>
-      </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero__content">
+    <h1 class="hero__title">Your Style, Your Rules.</h1>
+    <p class="hero__subtitle">
+      Explore premium men's clothing and footwear that defines your unique personality.
+    </p>
+    <div class="hero__buttons">
+      <a routerLink="/shop" class="btn btn-warning btn-lg me-3">Shop Now</a>
+      <a routerLink="/about" class="btn btn-outline-light btn-lg">Learn More</a>
     </div>
   </div>
 </section>
 
-<!-- Featured Products Section -->
-<section class="featured bg-white">
-  <div class="shop-bg">
-    <div class="container py-5">
-      <div class="section-header text-center mb-5">
-        <h2 class="section-title">Featured Products</h2>
-        <p class="section-subtitle">Discover our most popular items handpicked for you</p>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-md-3 mb-4" *ngFor="let product of featuredProducts">
-          <div class="card h-100 shadow-sm">
-            <div class="card-img-container">
-              <img [src]="product.image" class="card-img-top" [alt]="product.name">
-            </div>
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">{{ product.name }}</h5>
-              <span class="text-dark mb-2">R {{ product.price.toFixed(2) }} ZAR</span>
-              <a [routerLink]="['/product', product.id]" class="btn btn-sm btn-outline-dark mt-3">View</a>
-            </div>
+<!-- FEATURED -->
+<section class="section featured">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">Featured Products</h2>
+      <p class="section__subtitle">
+        Discover our most popular items handpicked for you
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4 col-sm-6" *ngFor="let product of featuredProducts">
+        <div class="card product-card h-100">
+          <img [src]="product.image" class="card-img-top" [alt]="product.name" />
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <div class="price">R {{ product.price.toFixed(2) }} ZAR</div>
+            <a [routerLink]="['/product', product.id]" class="btn btn-outline-dark btn-sm">
+              View
+            </a>
           </div>
         </div>
       </div>
-      <div class="text-center mt-4">
-        <a routerLink="/shop" class="btn btn-outline-dark btn-lg">View All Products</a>
-      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a routerLink="/shop" class="btn btn-outline-dark btn-lg">
+        View All Products
+      </a>
     </div>
   </div>
 </section>
 
-<!-- Newsletter Signup Section -->
-<section class="newsletter-section py-5">
+<!-- NEWSLETTER -->
+<section class="section newsletter">
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-center g-4">
       <div class="col-lg-6">
         <h3>Stay Updated</h3>
-        <p class="mb-0">Get the latest fashion trends, exclusive offers, and style tips delivered to your inbox.</p>
+        <p>
+          Get the latest fashion trends, exclusive offers, and style tips delivered to your inbox.
+        </p>
       </div>
+
       <div class="col-lg-6">
-        <div class="newsletter-form">
-          <div class="input-group">
-            <input type="email" class="form-control" placeholder="Enter your email address" [(ngModel)]="newsletterEmail">
-            <button class="btn btn-warning" type="button" (click)="subscribeNewsletter()">Subscribe</button>
-          </div>
-          <small class="form-text">We respect your privacy. Unsubscribe at any time.</small>
+        <div class="input-group">
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Enter your email"
+            [(ngModel)]="newsletterEmail"
+          />
+          <button class="btn btn-warning" type="button" (click)="subscribeNewsletter()">
+            Subscribe
+          </button>
         </div>
+        <small class="text-muted">
+          We respect your privacy. Unsubscribe anytime.
+        </small>
       </div>
     </div>
   </div>

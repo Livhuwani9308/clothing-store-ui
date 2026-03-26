@@ -1,46 +1,85 @@
+<!-- <img src="https://livhuwani.sirv.com/MKclothing/logo/logo.jpg" alt="MKclothing Logo" class="brand-logo" /> -->
 <header class="header-main">
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand" routerLink="/" aria-label="MKclothing Home">
-        <!-- <img src="https://livhuwani.sirv.com/MKclothing/logo/logo.jpg" alt="MKclothing Logo" class="brand-logo" /> -->
-        <img src="/assets/images/final.png" alt="main logo" class="main-logo" />
+
+      <!-- Logo -->
+      <a class="navbar-brand" routerLink="/">
+        <img src="/assets/images/final.png"
+             alt="MK Clothing Logo"
+             class="main-logo" />
       </a>
-      
-      <button 
-        class="navbar-toggler" 
-        type="button" 
-        data-bs-toggle="collapse" 
-        data-bs-target="#navbarNav" 
-        aria-controls="navbarNav" 
-        aria-expanded="false" 
-        aria-label="Toggle navigation"
+
+      <!-- Mobile Toggle -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
         (click)="toggleMenu()">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
-      <div class="collapse navbar-collapse" id="navbarNav" [class.show]="isMenuOpen">
-        <ul class="navbar-nav ms-auto">
+
+      <!-- Navigation -->
+      <div class="collapse navbar-collapse"
+           id="navbarNav"
+           [class.show]="isMenuOpen">
+
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
+
           <li class="nav-item">
-            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link" (click)="closeMenu()">Home</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/shop" routerLinkActive="active" class="nav-link" (click)="closeMenu()">Shop</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/about" routerLinkActive="active" class="nav-link" (click)="closeMenu()">About</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/contact" routerLinkActive="active" class="nav-link" (click)="closeMenu()">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/cart" class="nav-link cart-btn" (click)="closeMenu()">
-              <i class="bi bi-cart3"></i>
-              <span>Cart</span>
-              <span class="cart-badge" *ngIf="cartItemCount > 0">{{ cartItemCount }}</span>
+            <a routerLink="/"
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{ exact: true }"
+               class="nav-link"
+               (click)="closeMenu()">
+              Home
             </a>
           </li>
+
+          <li class="nav-item">
+            <a routerLink="/shop"
+               routerLinkActive="active"
+               class="nav-link"
+               (click)="closeMenu()">
+              Shop
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a routerLink="/about"
+               routerLinkActive="active"
+               class="nav-link"
+               (click)="closeMenu()">
+              About
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a routerLink="/contact"
+               routerLinkActive="active"
+               class="nav-link"
+               (click)="closeMenu()">
+              Contact
+            </a>
+          </li>
+
+          <li class="nav-item position-relative">
+            <a routerLink="/cart"
+               class="cart-btn"
+               (click)="closeMenu()">
+              <i class="bi bi-cart3"></i>
+              Cart
+              <span *ngIf="cartItemCount > 0"
+                    class="cart-badge">
+                {{ cartItemCount }}
+              </span>
+            </a>
+          </li>
+
         </ul>
       </div>
+
     </div>
   </nav>
 </header>

@@ -4,86 +4,90 @@
   [showBreadcrumb]="true">
 </app-breadcrumb-banner>
 
-<div class="contact-container">
+<section class="contact-container">
   <div class="container py-5">
     <div class="row justify-content-center">
       <div class="col-lg-8 col-md-10">
+
         <div class="contact-card">
-          <div class="contact-header">
-            <h2 class="contact-title">Get in Touch</h2>
-            <p class="contact-subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+
+          <!-- Header -->
+          <div class="contact-header text-center">
+            <div class="contact-title">Get in Touch</div>
+            <p class="contact-subtitle">
+              We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            </p>
           </div>
-          
-          <form #contactForm="ngForm" (ngSubmit)="submitContactForm()" class="contact-form">
+
+          <!-- Form -->
+          <form #contactForm="ngForm"
+                (ngSubmit)="submitContactForm()"
+                class="contact-form">
+
             <div class="form-group">
-              <label class="form-label">
-                <i class="fas fa-user"></i>
-                Full Name
-              </label>
-              <input 
-                name="name" 
-                [(ngModel)]="contact.name" 
-                required 
-                class="form-control" 
+              <label>Full Name</label>
+              <input
+                name="name"
+                [(ngModel)]="contact.name"
+                required
+                class="form-control"
                 placeholder="Enter your full name"
-                [class.is-invalid]="contactForm.submitted && contactForm.controls['name'].invalid"
+                [class.is-invalid]="contactForm.submitted && contactForm.controls['name']?.invalid"
               />
-              <div class="invalid-feedback" *ngIf="contactForm.submitted && contactForm.controls['name'].invalid">
-                Please enter your name.
+              <div class="invalid-feedback"
+                   *ngIf="contactForm.submitted && contactForm.controls['name']?.invalid">
+                Name is required.
               </div>
             </div>
-            
+
             <div class="form-group">
-              <label class="form-label">
-                <i class="fas fa-envelope"></i>
-                Email Address
-              </label>
-              <input 
-                type="email" 
-                name="email" 
-                [(ngModel)]="contact.email" 
-                required 
-                class="form-control" 
+              <label>Email Address</label>
+              <input
+                type="email"
+                name="email"
+                [(ngModel)]="contact.email"
+                required
+                class="form-control"
                 placeholder="Enter your email address"
-                [class.is-invalid]="contactForm.submitted && contactForm.controls['email'].invalid"
+                [class.is-invalid]="contactForm.submitted && contactForm.controls['email']?.invalid"
               />
-              <div class="invalid-feedback" *ngIf="contactForm.submitted && contactForm.controls['email'].invalid">
-                Please enter a valid email address.
+              <div class="invalid-feedback"
+                   *ngIf="contactForm.submitted && contactForm.controls['email']?.invalid">
+                Valid email is required.
               </div>
             </div>
-            
+
             <div class="form-group">
-              <label class="form-label">
-                <i class="fas fa-comment"></i>
-                Message
-              </label>
-              <textarea 
-                name="message" 
-                [(ngModel)]="contact.message" 
-                required 
-                rows="6" 
-                class="form-control" 
-                placeholder="Tell us how we can help you..."
-                [class.is-invalid]="contactForm.submitted && contactForm.controls['message'].invalid"
+              <label>Message</label>
+              <textarea
+                name="message"
+                [(ngModel)]="contact.message"
+                required
+                rows="5"
+                class="form-control"
+                placeholder="Tell us how we can help..."
+                [class.is-invalid]="contactForm.submitted && contactForm.controls['message']?.invalid"
               ></textarea>
-              <div class="invalid-feedback" *ngIf="contactForm.submitted && contactForm.controls['message'].invalid">
-                Please enter your message.
+              <div class="invalid-feedback"
+                   *ngIf="contactForm.submitted && contactForm.controls['message']?.invalid">
+                Message is required.
               </div>
             </div>
-            
-            <div class="form-actions">
-              <button 
-                type="submit" 
-                class="btn btn-primary submit-btn" 
+
+            <div class="form-actions text-center">
+              <button
+                type="submit"
+                class="submit-btn"
                 [disabled]="contactForm.invalid || isSubmitting"
               >
-                <i class="fas fa-paper-plane"></i>
                 <span *ngIf="!isSubmitting">Send Message</span>
                 <span *ngIf="isSubmitting">Sending...</span>
               </button>
             </div>
+
           </form>
-          
+
+          <!-- Info Section -->
           <div class="contact-info">
             <div class="info-item">
               <i class="fas fa-map-marker-alt"></i>
@@ -92,6 +96,7 @@
                 <p>123 Fashion Street, Style District<br>New York, NY 10001</p>
               </div>
             </div>
+
             <div class="info-item">
               <i class="fas fa-phone"></i>
               <div>
@@ -99,16 +104,19 @@
                 <p>+1 (555) 123-4567</p>
               </div>
             </div>
+
             <div class="info-item">
               <i class="fas fa-clock"></i>
               <div>
                 <h5>Business Hours</h5>
-                <p>Mon - Fri: 9:00 AM - 6:00 PM<br>Sat - Sun: 10:00 AM - 4:00 PM</p>
+                <p>Mon - Fri: 9AM - 6PM<br>Sat - Sun: 10AM - 4PM</p>
               </div>
             </div>
           </div>
+
         </div>
+
       </div>
     </div>
   </div>
-</div>
+</section>

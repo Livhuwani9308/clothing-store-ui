@@ -1,4 +1,5 @@
 @use "sass:color";
+
 /* =========================================================
    VARIABLES (Refined from Contact Page)
 ========================================================= */
@@ -151,7 +152,7 @@ $dark-header: #2d2d2d;
       background: linear-gradient(
         90deg,
         $yellow-primary,
-        lighten($yellow-primary, 10%)
+        color.adjust($yellow-primary, $lightness: 10%)
       );
       border-radius: 50%;
       display: flex;

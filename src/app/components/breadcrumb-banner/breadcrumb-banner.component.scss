@@ -1,3 +1,5 @@
+@use "sass:color";
+
 /* =========================================================
    BREADCRUMB BANNER
 ========================================================= */
@@ -76,6 +78,7 @@ $dark-bg: #111111;
   & + .breadcrumb-item::before {
     content: "›";
     color: rgba(255, 255, 255, 0.4);
+    font-size: 18px;
   }
 }
 
@@ -86,7 +89,7 @@ $dark-bg: #111111;
   transition: 0.25s ease;
 
   &:hover {
-    color: lighten($primary-yellow, 8%);
+    color: color.adjust($primary-yellow, $lightness: 8%);
   }
 }
 

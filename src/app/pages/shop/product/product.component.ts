@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { PRODUCTS } from '../../../data/products.data';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-shop-category',
-  imports: [],
-  templateUrl: './shop-category.component.html',
-  styleUrl: './shop-category.component.scss'
+  selector: 'app-product',
+  standalone: false,
+  templateUrl: './product.component.html',
+  styleUrl: './product.component.scss'
 })
-export class ShopCategoryComponent {
-
+export class ProductComponent {
   products: any[] = [];
   filteredProducts: any[] = [];
 
@@ -19,10 +18,10 @@ export class ShopCategoryComponent {
   selectedSizes: string[] = [];
   selectedColors: string[] = [];
 
-  sizes = ['XS','S','M','L','XL'];
-  colors = ['Black','White','Beige','Navy','Grey'];
+  sizes = ['XS', 'S', 'M', 'L', 'XL'];
+  colors = ['Black', 'White', 'Beige', 'Navy', 'Grey'];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     const category = this.route.snapshot.paramMap.get('category');
@@ -50,14 +49,3 @@ export class ShopCategoryComponent {
       : this.selectedColors.push(color);
   }
 }
-// export class ShopCategoryComponent {
-
-//   products: any = [];
-
-//   constructor(private route: ActivatedRoute) {}
-
-//   ngOnInit() {
-//     const category = this.route.snapshot.paramMap.get('category');
-//     this.products = PRODUCTS.filter(p => p.category === category);
-//   }
-// }

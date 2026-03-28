@@ -7,10 +7,12 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 import { ShopComponent } from './pages/shop/shop.component';
+import { ShopCategoryComponent } from './pages/shop/shop-category/shop-category.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'shop', component: ShopComponent },
+  { path: 'shop-category/:category', component: ShopCategoryComponent },
   { path: 'product/:id', component: ProductDetailsComponent },
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },

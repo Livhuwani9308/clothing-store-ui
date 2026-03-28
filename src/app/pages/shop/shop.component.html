@@ -4,7 +4,7 @@
   [showBreadcrumb]="true">
 </app-breadcrumb-banner>
 
-<div class="shop-bg">
+<!-- <div class="shop-bg">
   <div class="container py-5">
     <div class="row justify-content-center">
       <div class="col-md-3 mb-4" *ngFor="let category of categories">
@@ -17,5 +17,29 @@
         </div>
       </div>
     </div>
+  </div>
+</div> -->
+<div class="shop-bg">
+  <div class="container py-5">
+
+    <div class="category-grid">
+      <div 
+        class="category-item"
+        *ngFor="let category of categories"
+        [routerLink]="['/shop', category.value]"
+      >
+        <div class="image-wrapper">
+          <img 
+            src="/assets/images/placeholder.jpeg" 
+            alt="{{ category.label }}" 
+          />
+        </div>
+
+        <h6 class="category-title">
+          {{ category.label }}
+        </h6>
+      </div>
+    </div>
+
   </div>
 </div>

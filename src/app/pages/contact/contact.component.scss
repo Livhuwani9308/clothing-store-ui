@@ -1,3 +1,5 @@
+@use "sass:color";
+
 /* =========================================================
    VARIABLES (Refined Palette)
 ========================================================= */
@@ -125,7 +127,8 @@ $yellow-soft: #fbf7e8;
   transition: all 0.25s ease;
 
   &:hover:not(:disabled) {
-    background: darken($yellow-primary, 6%);
+    //background: darken($yellow-primary, 6%);
+    background: color.adjust($yellow-primary, $lightness: -6%);
     transform: translateY(-2px);
   }
 

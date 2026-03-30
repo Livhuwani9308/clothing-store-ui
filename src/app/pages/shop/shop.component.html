@@ -4,21 +4,6 @@
   [showBreadcrumb]="true">
 </app-breadcrumb-banner>
 
-<!-- <div class="shop-bg">
-  <div class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-md-3 mb-4" *ngFor="let category of categories">
-        <div class="card text-center category-card"
-             [routerLink]="['/shop', category.value]">
-
-          <div class="card-body">
-            <h5>{{ category.label }}</h5>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
 <div class="shop-bg">
   <div class="container py-5">
 
@@ -26,17 +11,17 @@
       <div 
         class="category-item"
         *ngFor="let category of categories"
-        [routerLink]="['/shop', category.value]"
+        [routerLink]="['/products', category.id]"
       >
         <div class="image-wrapper">
           <img 
             src="/assets/images/placeholder.jpeg" 
-            alt="{{ category.label }}" 
+            alt="{{ category.name }}" 
           />
         </div>
 
         <h6 class="category-title">
-          {{ category.label }}
+          {{ category.name }}
         </h6>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -17,10 +16,10 @@ import { AccountComponent } from './pages/account/account.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { HomeCarouselComponent } from './components/home-carousel/home-carousel.component';
 import { FormsModule } from '@angular/forms';
-import { ProductComponent } from './pages/shop/product/product.component';
 import { ProductListComponent } from './pages/shop/product-list/product-list.component';
 import { ProductPreviewComponent } from './pages/shop/product-preview/product-preview.component';
 import { ProductFormComponent } from './pages/shop/product-form/product-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +37,6 @@ import { ProductFormComponent } from './pages/shop/product-form/product-form.com
     AccountComponent,
     AdminComponent,
     HomeCarouselComponent,
-    ProductComponent,
     ProductListComponent,
     ProductPreviewComponent,
     ProductFormComponent
@@ -46,7 +44,8 @@ import { ProductFormComponent } from './pages/shop/product-form/product-form.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

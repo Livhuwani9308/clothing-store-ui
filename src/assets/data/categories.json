@@ -1,0 +1,13 @@
+[
+  { "id": "women", "name": "Women" },
+  { "id": "kids", "name": "Kids" },
+  { "id": "men", "name": "Men" },
+  { "id": "jewelry", "name": "Jewelry & Accessories" },
+  { "id": "tops", "name": "Tops" },
+  { "id": "sports", "name": "Sports & Outdoor" },
+  { "id": "dresses", "name": "Dresses" },
+  { "id": "shoes", "name": "Shoes" },
+  { "id": "bags", "name": "Bags & Luggage" },
+  { "id": "denim", "name": "Denim" },
+  { "id": "outerwear", "name": "Outerwear & Suits" }
+]

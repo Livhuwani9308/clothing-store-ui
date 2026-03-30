@@ -45,7 +45,7 @@ export class ProductListComponent implements OnInit {
 
     this.products.forEach(product => {
       product.variants.forEach(variant => {
-        colors.add(variant.color);
+        colors.add(variant.color.name);
         variant.sizes.forEach(size => sizes.add(size));
       });
     });
@@ -62,7 +62,7 @@ export class ProductListComponent implements OnInit {
       const colorMatch =
         this.selectedColors.length === 0 ||
         product.variants.some(v =>
-          this.selectedColors.includes(v.color)
+          this.selectedColors.includes(v.color.name)
         );
 
       const sizeMatch =

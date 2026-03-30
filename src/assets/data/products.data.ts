@@ -8,8 +8,10 @@ function generateCategoryProducts(
   basePrice: number
 ): Product[] {
 
-  const colors = ['Black', 'White', 'Beige', 'Navy', 'Grey'];
-  const sizes = ['XS','S','M','L','XL'];
+  const colors = ['black', 'white', 'orange', 'pink', 'yellow', 'blue', 'green', 'red'];
+  const sizes = ['XS', 'S', 'M', 'L', 'XL'];
+
+  const placeholder = '/assets/images/placeholder.jpeg';
 
   return Array.from({ length: 15 }, (_, i) => ({
     id: startId + i,
@@ -20,14 +22,22 @@ function generateCategoryProducts(
     price: basePrice + (i * 40),
     oldPrice: basePrice + (i * 40) + 150,
     discountPercentage: 10,
-    imageUrl: `assets/products/${category}-${i + 1}.jpg`,
+    imageUrl: placeholder,
     images: [
-      `assets/products/${category}-${i + 1}.jpg`,
-      `assets/products/${category}-${i + 1}-2.jpg`
+      placeholder,
+      placeholder
     ],
+    // imageUrl: `assets/products/${category}-${i + 1}.jpg`,
+    // images: [
+    //   `assets/products/${category}-${i + 1}.jpg`,
+    //   `assets/products/${category}-${i + 1}-2.jpg`
+    // ],
     variants: [
       {
-        color: colors[i % colors.length],
+        color: {
+          name: colors[i % colors.length],
+          value: colors[i % colors.length].toLowerCase()
+        },
         sizes: sizes,
         stock: 10 + i
       }

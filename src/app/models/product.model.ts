@@ -1,5 +1,8 @@
 export interface ProductVariant {
-  color: string;
+  color: {
+    name: string;
+    value: string;
+  };
   sizes: string[];
   stock: number;
 }

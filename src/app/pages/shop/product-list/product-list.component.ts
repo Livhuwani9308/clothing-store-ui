@@ -99,4 +99,9 @@ export class ProductListComponent implements OnInit {
     this.selectedColors = [];
     this.filteredProducts = [...this.products];
   }
+
+  addToCart(product: Product) {
+    console.log('Added to cart:', product);
+    // Later connect to CartService
+  }
 }

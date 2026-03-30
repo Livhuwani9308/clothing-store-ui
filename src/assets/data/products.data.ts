@@ -25,6 +25,9 @@ function generateCategoryProducts(
     imageUrl: placeholder,
     images: [
       placeholder,
+      placeholder,
+      placeholder,
+      placeholder,
       placeholder
     ],
     // imageUrl: `assets/products/${category}-${i + 1}.jpg`,

@@ -1,12 +1,26 @@
 <div class="shop-bg">
   <div class="container py-5">
+        
+    <!-- ===== BREADCRUMB ===== -->
+    <div class="mb-4 small breadcrumb-path">
+      <a routerLink="/" class="breadcrumb-link">Home</a>
+      <span class="separator">/</span>
+
+      <a [routerLink]="['/shop', product.category]" class="breadcrumb-link">
+        {{ product.category }}
+      </a>
+
+      <span class="separator">/</span>
+
+      <span class="current">
+        {{ product.name }}
+      </span>
+    </div>
 
     <div class="row g-4">
-
       <!-- ===== LEFT: IMAGES ===== -->
       <div class="col-lg-6">
         <div class="preview-card">
-
           <!-- MAIN IMAGE -->
           <div class="main-image">
             <img [src]="selectedImage" alt="product" />
@@ -21,15 +35,12 @@
               [class.active]="img === selectedImage"
             />
           </div>
-
         </div>
       </div>
 
       <!-- ===== RIGHT: PRODUCT INFO ===== -->
       <div class="col-lg-6">
-
         <div class="product-info">
-
           <h4 class="title">{{ product.name }}</h4>
 
           <div class="price-section">
@@ -70,7 +81,10 @@
           </div>
 
           <!-- CTA -->
-          <button class="btn btn-dark w-100 mt-4">
+          <button
+            class="btn btn-dark w-100 mt-4"
+            (click)="addToCart(product); $event.stopPropagation()"
+          >
             ADD TO CART
           </button>
 
@@ -78,16 +92,12 @@
           <div class="description mt-4">
             <h6>Description</h6>
             <p>
-              Premium quality product designed for comfort and style.
-              Perfect for everyday wear.
+              Premium quality product designed for comfort and style. Perfect
+              for everyday wear.
             </p>
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </div>
 </div>

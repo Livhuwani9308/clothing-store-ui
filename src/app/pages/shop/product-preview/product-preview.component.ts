@@ -43,4 +43,9 @@ export class ProductPreviewComponent implements OnInit {
   selectSize(size: string) {
     this.selectedSize = size;
   }
+
+  addToCart(product: Product) {
+    console.log('Added to cart:', product);
+    // Later connect to CartService
+  }
 }

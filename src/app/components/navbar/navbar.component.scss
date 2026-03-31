@@ -1,0 +1,137 @@
+/* =========================
+   HEADER BASE
+========================= */
+
+.header-main {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+/* =========================
+   TOP ROW
+========================= */
+
+.header-top {
+  padding: 12px 0;
+}
+
+.logo img {
+  height: 38px;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-wrapper {
+  width: 45%;
+  border: 1px solid #ddd;
+  display: flex;
+  height: 40px;
+}
+
+.search-wrapper input {
+  flex: 1;
+  border: none;
+  padding: 0 12px;
+  outline: none;
+}
+
+.search-wrapper button {
+  width: 45px;
+  border: none;
+  background: #111;
+  color: #fff;
+}
+
+/* =========================
+   ICONS
+========================= */
+
+.header-icons a {
+  color: #111;
+  font-size: 1.1rem;
+  position: relative;
+  transition: 0.2s ease;
+}
+
+.header-icons a:hover {
+  color: #198055;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #111;
+  color: #fff;
+  font-size: 0.65rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-toggle {
+  border: none;
+  background: none;
+  font-size: 1.3rem;
+}
+
+/* =========================
+   CATEGORY ROW
+========================= */
+
+.category-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 10px 0;
+  list-style: none;
+  margin: 0;
+  overflow-x: auto;
+}
+
+.category-nav li a {
+  color: #333;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: 0.2s ease;
+}
+
+.category-nav li a:hover {
+  color: #198055;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 991px) {
+
+  .search-wrapper {
+    display: none;
+  }
+
+  .header-bottom {
+    display: none;
+  }
+
+  .header-bottom.open {
+    display: block;
+  }
+
+  .category-nav {
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px 0;
+  }
+}

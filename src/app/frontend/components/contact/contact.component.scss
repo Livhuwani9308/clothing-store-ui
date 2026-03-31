@@ -1,0 +1,200 @@
+@use "sass:color";
+
+/* =========================================================
+   VARIABLES (Refined Palette)
+========================================================= */
+
+$primary: #1e3a8a;
+$accent: #2563eb;
+$bg-light: #f8fafc;
+$border-color: #e2e8f0;
+$text-dark: #0f172a;
+$text-muted: #64748b;
+$error: #dc3545;
+
+$dark-header: #2d2d2d;
+$yellow-primary: #facc15;
+$yellow-soft: #fbf7e8;
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.contact-container {
+  background: $bg-light;
+  padding: 80px 0;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.contact-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid $border-color;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.contact-header {
+  background: $dark-header;
+  padding: 50px 40px 45px;
+  text-align: center;
+
+  .contact-title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: $yellow-primary;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .contact-subtitle {
+    color: $yellow-soft;
+    font-size: 1rem;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.contact-form {
+  padding: 40px;
+
+  .form-group {
+    margin-bottom: 28px;
+
+    label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+      font-size: 0.95rem;
+      color: $text-dark;
+    }
+  }
+
+  .form-control {
+    border-radius: 8px;
+    border: 1px solid $border-color;
+    padding: 13px 16px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    background: #ffffff;
+
+    &:focus {
+      border-color: $accent;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+      outline: none;
+    }
+
+    &.is-invalid {
+      border-color: $error;
+    }
+  }
+
+  textarea.form-control {
+    resize: vertical;
+  }
+
+  .invalid-feedback {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: $error;
+  }
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.submit-btn {
+  background: $yellow-primary;
+  border: none;
+  color: $dark-header;
+  padding: 13px 34px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+
+  &:hover:not(:disabled) {
+    //background: darken($yellow-primary, 6%);
+    background: color.adjust($yellow-primary, $lightness: -6%);
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+/* =========================================================
+   CONTACT INFO
+========================================================= */
+
+.contact-info {
+  background: $dark-header;
+  padding: 40px;
+  text-align: left;
+  padding-left: 5rem;;
+
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 8px;
+    margin-bottom: 28px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    i {
+      color: $yellow-primary;
+      font-size: 1.5rem;
+    }
+
+    h5 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: $yellow-primary;
+    }
+
+    p {
+      margin: 0;
+      color: $yellow-soft;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+  .contact-header {
+    padding: 35px 25px 30px;
+
+    .contact-title {
+      font-size: 1.9rem;
+    }
+  }
+
+  .contact-form,
+  .contact-info {
+    padding: 28px;
+  }
+}

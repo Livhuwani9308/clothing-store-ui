@@ -1,0 +1,289 @@
+/* ===== BREADCRUMB ===== */
+.breadcrumb-path {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.breadcrumb-link {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #198055;
+}
+
+.separator {
+  margin: 0 6px;
+  color: #aaa;
+}
+
+.current {
+  color: #999;
+}
+
+/* ===== PAGE BACKGROUND ===== */
+.shop-bg {
+  background: #f5f5f7;
+}
+
+/* ===== FILTER SIDEBAR ===== */
+.filter-card {
+  background: #ffffff;
+  padding: 1.4rem;
+  border-radius: 12px;
+  border: 1px solid #e6e6e6;
+  position: sticky;
+  top: 90px;
+}
+
+.filter-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #111;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.filter-group {
+  margin-bottom: 1.6rem;
+}
+
+.filter-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #222;
+  display: block;
+}
+
+/* PRICE RANGE */
+.form-range {
+  height: 4px;
+}
+
+.form-range::-webkit-slider-thumb {
+  background: #111;
+}
+
+/* FILTER CHIP */
+.filter-chip {
+  border: 1px solid #ddd;
+  background: #fafafa;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #333;
+  transition: 0.2s ease;
+}
+
+.filter-chip:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.filter-chip.active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/* ===== SIZE CHECKBOX STYLING ===== */
+
+.size-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.size-item {
+  display: flex;
+  align-items: center;
+}
+
+.size-item .form-check-input {
+  cursor: pointer;
+}
+
+.size-item .form-check-label {
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+/* ===== COLOR LIST ===== */
+
+.color-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.color-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: 0.2s ease;
+  color: black;
+}
+
+.color-item:hover {
+  background: #f1f1f1;
+}
+
+.color-item.active {
+  background: #111;
+  color: #fff;
+}
+
+.color-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  flex-shrink: 0;
+}
+
+.color-name {
+  font-size: 0.85rem;
+}
+
+/* ===== PRODUCT CARD ===== */
+.product-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background: #fff;
+  transition: 0.2s ease;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.product-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+/* Show on hover */
+.product-card:hover .cart-btn {
+  opacity: 1;
+}
+
+/* Hover effect */
+.cart-btn:hover {
+  background: #198055;
+  transform: scale(1.08);
+}
+
+/* Cart Button */
+.cart-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  transition: 0.2s ease;
+}
+
+/* IMAGE */
+.card-img-container {
+  position: relative;
+  background: #f3f3f3;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+.product-card:hover .card-img-top {
+  transform: scale(1.04);
+}
+
+/* SALE BADGE */
+.badge-sale {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #ff4d4f;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 3px 7px;
+  border-radius: 4px;
+}
+
+/* CARD BODY */
+.card-body {
+  padding: 0.75rem;
+}
+
+/* TITLE */
+.card-title {
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+  height: 38px;
+  overflow: hidden;
+  color: #222;
+}
+
+/* PRICE */
+.price-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.price-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #111;
+}
+
+.old-price {
+  text-decoration: line-through;
+  font-size: 0.7rem;
+  color: #999;
+}
+
+/* BUTTON */
+.product-card .btn {
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.badge-sale {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #c4f9db;
+  color: #198055;
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 20px;
+}

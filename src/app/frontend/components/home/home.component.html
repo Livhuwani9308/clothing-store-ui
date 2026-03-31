@@ -1,0 +1,76 @@
+<app-home-carousel></app-home-carousel>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero__content">
+    <h1 class="hero__title">Your Style, Your Rules.</h1>
+    <p class="hero__subtitle">
+      Explore premium men's clothing and footwear that defines your unique personality.
+    </p>
+    <div class="hero__buttons">
+      <a routerLink="/shop" class="btn btn-warning btn-lg me-3">Shop Now</a>
+      <a routerLink="/about" class="btn btn-outline-light btn-lg">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="section featured">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">Featured Products</h2>
+      <p class="section__subtitle">
+        Discover our most popular items handpicked for you
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4 col-sm-6" *ngFor="let product of featuredProducts">
+        <div class="card product-card h-100">
+          <img [src]="product.image" class="card-img-top" [alt]="product.name" />
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <div class="price">R {{ product.price.toFixed(2) }} ZAR</div>
+            <a [routerLink]="['/product', product.id]" class="btn btn-outline-dark btn-sm">
+              View
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a routerLink="/shop" class="btn btn-outline-dark btn-lg">
+        View All Products
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section newsletter">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <h3>Stay Updated</h3>
+        <p>
+          Get the latest fashion trends, exclusive offers, and style tips delivered to your inbox.
+        </p>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Enter your email"
+            [(ngModel)]="newsletterEmail"
+          />
+          <button class="btn btn-subscribe" type="button" (click)="subscribeNewsletter()">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

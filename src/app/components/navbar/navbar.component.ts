@@ -1,22 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { filter } from 'rxjs';
 import { CartService } from '../../services/cart.service';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-navbar',
   standalone: false,
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.scss'
 })
-export class HeaderComponent implements OnInit {
+export class NavbarComponent {
+  categories: string[] = [
+    'Women Clothing',
+    'Men Clothing',
+    'Shoes',
+    'Jewelry & Accessories',
+    'Beauty & Health',
+    'Sports & Outdoors',
+    'Home & Living'
+  ];
+
   cartItemCount: number = 0;
   isMenuOpen: boolean = false;
 
   constructor(
     private router: Router,
     private cartService: CartService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.updateCartCount();

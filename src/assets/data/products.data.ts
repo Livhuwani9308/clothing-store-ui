@@ -1,5 +1,5 @@
-import { Product } from '../../app/models/product.model';
-import { Category } from '../../app/models/category.model';
+import { Product } from '../../app/interfaces/product.model';
+import { Category } from '../../app/interfaces/category.model';
 
 function generateCategoryProducts(
   category: Category,

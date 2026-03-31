@@ -1,75 +1,135 @@
 /* ========================================
-   FOOTER – MK Clothing
+   MK Clothing Footer – Premium B/W
 ======================================== */
 
-$brand-yellow: #f5c518;
-$dark: #000;
-$text-muted: #aaa;
+$black: #000;
+$dark-gray: #111;
+$mid-gray: #888;
+$light-gray: #e8e6e6;
 $transition: 0.25s ease;
 
 .footer-main {
-  background: $dark;
+  background: $black;
   color: #fff;
   padding: 4rem 0 2rem;
-  border-top: 1px solid rgba(245, 197, 24, 0.2);
+  border-top: 1px solid #1a1a1a;
 }
 
-/* Grid Layout */
+/* Grid */
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
 }
 
-/* Titles */
-.footer-title {
+/* Logo Container */
+.footer-logo {
+  margin-bottom: 1.2rem;
+}
+
+/* Logo Image */
+.footer-logo img {
+  max-width: 160px;
+  height: auto;
+  display: block;
+  filter: brightness(0) invert(1); 
+  /* makes dark logo white for black background */
+}
+
+/* Headings */
+.footer-heading {
   font-weight: 600;
   margin-bottom: 1.2rem;
-  color: $brand-yellow;
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $light-gray;
 }
 
 /* Text */
 .footer-text {
-  color: $text-muted;
+  color: $mid-gray;
   line-height: 1.6;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+}
+
+.footer-text.small {
+  font-size: 0.85rem;
 }
 
 /* Links */
 .footer-link {
   display: block;
   margin-bottom: 0.6rem;
-  color: $text-muted;
+  color: $mid-gray;
   text-decoration: none !important;
-  transition: color $transition;
-  font-size: 0.95rem;
+  transition: $transition;
+  font-size: 0.9rem;
 }
 
 .footer-link:hover {
-  color: $brand-yellow;
+  color: #fff;
+  transform: translateX(3px);
+}
+
+/* Newsletter */
+.newsletter-box {
+  display: flex;
+  margin-top: 1rem;
+  border: 1px solid #222;
+}
+
+.newsletter-box input {
+  flex: 1;
+  padding: 0.7rem;
+  background: $dark-gray;
+  border: none;
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+.newsletter-box input:focus {
+  outline: none;
+}
+
+.newsletter-box button {
+  background: #000;
+  color: #fff;
+  border: solid #fff4f4 1px;
+  padding: 0 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: $transition;
+}
+
+.newsletter-box button:hover {
+  background: #ddd;
 }
 
 /* Divider */
 .footer-divider {
   margin: 3rem 0 1.5rem;
   height: 1px;
-  background: rgba(245, 197, 24, 0.15);
+  background: #1a1a1a;
 }
 
 /* Bottom */
 .footer-bottom {
   text-align: center;
-  font-size: 0.85rem;
-  color: $text-muted;
+  font-size: 0.8rem;
+  color: $mid-gray;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
   }
 
   .footer-main {

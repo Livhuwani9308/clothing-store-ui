@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PRODUCTS } from '../../../../assets/data/products.data';
-import { Product } from '../../../models/product.model';
+import { Product } from '../../../interfaces/product.model';
 
 @Component({
   selector: 'app-product-preview',

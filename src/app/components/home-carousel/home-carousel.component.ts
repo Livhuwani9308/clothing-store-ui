@@ -8,12 +8,12 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class HomeCarouselComponent implements OnInit, OnDestroy {
   images = [
-    'https://livhuwani.sirv.com/MKclothing/slider/slider-1.jpg',
-    'https://livhuwani.sirv.com/MKclothing/slider/slider-2.jpg',
-    'https://livhuwani.sirv.com/MKclothing/slider/slider-3.jpg',
-    'https://livhuwani.sirv.com/MKclothing/slider/slider-4.jpg',
-    'https://livhuwani.sirv.com/MKclothing/slider/slider-5.jpg',
-    'https://livhuwani.sirv.com/MKclothing/slider/slider-6.jpg'
+    '/assets/images/slider/slider-1.jpg',
+    '/assets/images/slider/slider-2.jpg',
+    '/assets/images/slider/slider-3.jpg',
+    '/assets/images/slider/slider-4.jpg',
+    '/assets/images/slider/slider-5.jpg',
+    '/assets/images/slider/slider-6.jpg'
   ];
 
   activeSlideIndex = 0;

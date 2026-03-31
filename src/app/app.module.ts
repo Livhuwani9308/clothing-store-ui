@@ -17,6 +17,8 @@ import { ProductPreviewComponent } from './pages/shop/product-preview/product-pr
 import { ProductFormComponent } from './pages/shop/product-form/product-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FrontendComponent } from './frontend/frontend/frontend.component';
+import { AdminComponent } from './admin/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ProductListComponent,
     ProductPreviewComponent,
     ProductFormComponent,
-    NavbarComponent
+    NavbarComponent,
+    FrontendComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

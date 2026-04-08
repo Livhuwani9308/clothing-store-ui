@@ -1,0 +1,24 @@
+<div class="container py-5">
+  <h2 class="text-warning mb-4">Your Cart</h2>
+  <div *ngIf="cartItems.length === 0" class="alert alert-info">Your cart is empty.</div>
+
+  <div *ngFor="let item of cartItems; let i = index" class="row align-items-center mb-4 border-bottom pb-2">
+    <div class="col-md-2">
+      <img [src]="item.imageUrl" class="img-fluid rounded" alt="{{ item.name }}">
+    </div>
+    <div class="col-md-6">
+      <h5>{{ item.name }}</h5>
+    </div>
+    <div class="col-md-2 text-end">
+      <strong>${{ item.price }}</strong>
+    </div>
+    <div class="col-md-2 text-end">
+      <button (click)="removeItem(i)" class="btn btn-sm btn-outline-danger">Remove</button>
+    </div>
+  </div>
+
+  <div class="text-end mt-4">
+    <h4>Total: ${{ getTotal() }}</h4>
+    <a routerLink="/checkout" class="btn btn-warning text-dark">Proceed to Checkout</a>
+  </div>
+</div>

@@ -1,0 +1,183 @@
+<div class="shop-bg">
+  <div class="container py-5">
+    <!-- BREADCRUMB -->
+    <div class="mb-4 small breadcrumb-path">
+      <a routerLink="/" class="breadcrumb-link">Home</a>
+      <span class="separator">/</span>
+      <span class="current">{{ categoryTitle }}</span>
+    </div>
+
+    <div class="row">
+      <!-- ===== LEFT FILTER SIDEBAR ===== -->
+      <div class="col-12 col-lg-4 col-xl-2 mb-4">
+        <div class="filter-card shadow-sm">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="filter-title mb-0">Filters</h5>
+            <button
+              class="btn btn-sm btn-outline-dark"
+              (click)="resetFilters()"
+            >
+              Reset
+            </button>
+          </div>
+
+          <!-- PRICE -->
+          <div class="filter-group">
+            <label class="form-label fw-semibold">
+              Max Price: R {{ maxPrice }}
+            </label>
+            <input
+              type="range"
+              class="form-range"
+              min="0"
+              max="5000"
+              step="100"
+              [(ngModel)]="maxPrice"
+              (input)="applyFilters()"
+            />
+          </div>
+
+          <!-- SIZE -->
+          <div class="filter-group">
+            <label class="form-label fw-semibold">Size</label>
+
+            <div class="size-list">
+              <div
+                class="form-check size-item"
+                *ngFor="let size of availableSizes"
+              >
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  [id]="'size-' + size"
+                  [checked]="selectedSizes.includes(size)"
+                  (change)="toggleSize(size)"
+                />
+
+                <label class="form-check-label" [for]="'size-' + size">
+                  {{ size }}
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- COLOR -->
+          <div class="filter-group">
+            <label class="form-label fw-semibold">Color</label>
+
+            <div class="color-list">
+              <div
+                class="color-item"
+                *ngFor="let color of availableColors"
+                (click)="toggleColor(color)"
+                [class.active]="selectedColors.includes(color)"
+              >
+                <span
+                  class="color-circle"
+                  [ngStyle]="{ 'background-color': color }"
+                ></span>
+
+                <span class="color-name">
+                  {{ color }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== RIGHT PRODUCT AREA ===== -->
+      <div class="col-xl-10 col-lg-8">
+        <!-- SORT BAR (MOVED INSIDE RIGHT COLUMN) -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div class="small text-muted">
+            {{ filteredProducts.length }} products found
+          </div>
+
+          <select class="form-select form-select-sm w-auto">
+            <option>Sort by: Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+          </select>
+        </div>
+
+        <!-- PRODUCTS GRID -->
+        <div class="row">
+          <div
+            class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4"
+            *ngFor="let product of filteredProducts"
+          >
+            <div
+              class="card product-card h-100"
+              [routerLink]="['/product', product.id]"
+            >
+              <div class="card-img-container">
+                <img
+                  [src]="product.imageUrl"
+                  class="card-img-top"
+                  [alt]="product.name"
+                />
+
+                <div class="badge-sale" *ngIf="product.oldPrice">SALE</div>
+              </div>
+
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title">{{ product.name }}</h6>
+
+                <div class="price-section">
+                  <div class="price-wrapper">
+                    <span class="price">R {{ product.price }}</span>
+                    <span *ngIf="product.oldPrice" class="old-price">
+                      R {{ product.oldPrice }}
+                    </span>
+                  </div>
+
+                  <button
+                    class="cart-btn"
+                    (click)="addToCart(product); $event.stopPropagation()"
+                  >
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div
+            class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4"
+            *ngFor="let product of filteredProducts"
+          >
+            <div class="card product-card h-100">
+              <div class="card-img-container">
+                <img
+                  [src]="product.imageUrl"
+                  class="card-img-top"
+                  [alt]="product.name"
+                />
+                <div class="badge-sale" *ngIf="product.oldPrice">SALE</div>
+              </div>
+
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title">{{ product.name }}</h6>
+
+                <div class="price-section">
+                  <span class="price">R {{ product.price }}</span>
+                  <span *ngIf="product.oldPrice" class="old-price">
+                    R {{ product.oldPrice }}
+                  </span>
+                </div>
+
+                <a
+                  [routerLink]="['/product', product.id]"
+                  class="btn btn-dark mt-auto"
+                >
+                  View
+                </a>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <!-- END RIGHT COLUMN -->
+    </div>
+  </div>
+</div>
